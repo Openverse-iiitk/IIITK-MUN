@@ -1,0 +1,105 @@
+/* Full-screen container with background image and animated dark overlay */
+.home-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  background: url('um.jpeg') center center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Dark overlay for contrast */
+.home-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 0;
+}
+
+/* Hero section with fade-in animation */
+.hero-section {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem;
+  animation: fadeInUp 1.5s ease forwards;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* Hero Title: neon glow, increased letter-spacing, and subtle 3D depth */
+.hero-title {
+  font-size: 5rem;
+  color: #00ffff;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+  margin-bottom: 1rem;
+  letter-spacing: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.hero-title:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* Hero Subtitle: clear and modern */
+.hero-subtitle {
+  font-size: 1.75rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+/* Modern Call-to-Action Button with animated gradient and shadow */
+.hero-button {
+  padding: 1rem 2.5rem;
+  font-size: 1.25rem;
+  color: #fff;
+  background: linear-gradient(45deg, #00ffff, #0088ff);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero-button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #0088ff, #00ffff);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Fade in and slight upward movement */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .hero-button {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+  }
+}

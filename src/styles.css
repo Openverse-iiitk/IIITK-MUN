@@ -1,0 +1,73 @@
+/* Global Dark Gradient Background */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: linear-gradient(135deg, #0d0d0d, #000000);
+  /* Ensure the background covers the full viewport */
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Watermark logo */
+body::after {
+  content: "";
+  background: url('./logo.png') no-repeat center center;
+  background-size: contain; /* or 'cover' based on your needs */
+  opacity: 0.1; /* Adjust opacity for a subtle watermark */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* So it doesn't interfere with interactions */
+  z-index: -1; /* Keep it behind all other elements */
+}
+
+/* Neon line at the bottom */
+.neon-line {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #00ffff;
+  box-shadow: 0 0 20px #00ffff;
+  z-index: 1000;
+  overflow: visible;
+}
+
+/* Particle container within the neon line */
+.neon-line .particles {
+  position: absolute;
+  top: -10px; /* adjust to position particles just above the line */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 0;
+}
+
+/* Style for each particle */
+.particle {
+  position: absolute;
+  bottom: 0;
+  width: 6px;
+  height: 6px;
+  background: #00ffff;
+  border-radius: 50%;
+  opacity: 0;
+  animation: particleRise 3s infinite;
+}
+
+/* Keyframes for particle rising animation */
+@keyframes particleRise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(0.5);
+    opacity: 0;
+  }
+}

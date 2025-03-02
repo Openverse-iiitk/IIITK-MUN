@@ -1,0 +1,80 @@
+/* src/components/Guide.css */
+
+.guide-page {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s ease;
+  }
+  
+  .guide-title {
+    text-align: center;
+    color: #004aad;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .guide-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2rem;
+  }
+  
+  .guide-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .guide-list li {
+    position: relative;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .guide-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #004aad;
+    font-weight: bold;
+  }
+  
+  .guide-action {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .modern-button {
+    background: linear-gradient(45deg, #004aad, #66a3ff);
+    color: #fff;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .modern-button:hover {
+    background: linear-gradient(45deg, #003080, #4d94ff);
+    transform: scale(1.05);
+  }
+  
+  /* Animation for the page load */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

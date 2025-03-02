@@ -1,0 +1,115 @@
+/* Global container with a continuously shifting gradient background */
+.about-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #004aad, #66a3ff, #004aad);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Overlay to maintain content readability */
+  .about-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  /* Ensure inner content sits above the overlay */
+  .about-container > * {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Header with continuous color cycling animation */
+  .about-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .about-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    animation: colorCycle 5s linear infinite;
+  }
+  
+  .about-header p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  /* Team section styles */
+  .team-section h3 {
+    text-align: center;
+    color: #004aad;
+    margin-bottom: 1.5rem;
+  }
+  
+  .team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .team-card {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .team-card img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .team-card h4 {
+    margin: 0.5rem 0;
+    color: #004aad;
+  }
+  
+  .team-card p {
+    margin: 0;
+    color: #777;
+  }
+  
+  .team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  .team-card:hover img {
+    transform: scale(1.1);
+  }
+  
+  /* Keyframes for the continuously shifting gradient background */
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Keyframes for the header's color cycle */
+  @keyframes colorCycle {
+    0% { color: #004aad; }
+    50% { color: #66a3ff; }
+    100% { color: #004aad; }
+  }
+  
