@@ -21,7 +21,7 @@ This is a React-based web app. Follow the steps below to run it locally.
 
 ```bash
 # Clone the repo
-git clone https://github.com/Openverse-iiitk/iiitk-mun.git
+git clone https://github.com/Openverse-iiitk/IIITK-MUN.git
 cd iiitk-mun
 ```
 
